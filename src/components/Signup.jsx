@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, Route, Switch } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-import Signup from "./Signup";
+import Login from "./Login";
 
 const routes = (
   <BrowserRouter>
@@ -13,36 +13,39 @@ const routes = (
   </BrowserRouter>
 );
 
-function Login() {
+function Signup() {
   return (
     <div>
-      <div className="loginText">Login</div>
+      <div className="loginText">Create An Account</div>
       <div className="inputBox">
-        <p className="inputText">Username</p>
+        <p className="inputText">Email Address</p>
+        {/* <label
+          style={{
+            color: "#FB74BB",
+            fontSize: "0.9rem",
+            marginTop: "rem"
+          }}
+        >
+          harrypotter@hogwartz.org
+        </label> */}
         <input className="input" type="text" />
+
         <p>Password</p>
+
         <input className="input" type="password" />
       </div>
-      <p
-        style={{
-          color: "#FB74BB",
-          textAlign: "left",
-          marginLeft: "5rem"
-        }}
-      >
-        Forgot Password?
-      </p>
+
       <button className="btn btn-primary">
         Take Me To The Realm of Learning
       </button>
       <p style={{ color: "#3e206d" }}>
-        New here?{" "}
+        Already have an account?{" "}
         <span style={{ color: "#FB74BB" }}>
-          <Link to="/signup">Create an account.</Link>
+          <Link to="/login">Sign in.</Link>
         </span>
       </p>
     </div>
   );
 }
 
-export default Login;
+export default Signup;

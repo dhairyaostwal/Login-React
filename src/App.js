@@ -1,5 +1,8 @@
 import React from "react";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
+import { BrowserRouter, Route, Switch } from "react-router";
+
 import "./styles.css";
 
 export default function App() {
@@ -18,7 +21,14 @@ export default function App() {
             <div className="brandText">
               All Notes <span>cross-Button</span>
             </div>
-            <Login />
+            {/* <Login /> */}
+            <main>
+              <Switch>
+                <Route path="/login" component={Login} exact />
+                <Route path="/signup" component={Signup} />
+                <Route component={Error} />
+              </Switch>
+            </main>
           </div>
         </div>
       </div>
